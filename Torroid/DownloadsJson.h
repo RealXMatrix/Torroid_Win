@@ -17,7 +17,7 @@ public:
     std::vector<std::map<std::string, std::string>> vDownloadEntries; // Json object key value pair vector+
 
 	// Return the size of the JSON Vector
-    size_t size();
+    size_t size() const;
 
     //args: filename
     //return: index

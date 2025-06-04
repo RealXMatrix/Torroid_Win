@@ -5,14 +5,20 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="MainWindow.xaml" />
-    <Page Include="SettingsPage.xaml" />
     <Page Include="AllDownloads.xaml" />
-    <Page Include="PropertiesPage.xaml" />
+    <Page Include="SettingsPage.xaml">
+      <Filter>Pages</Filter>
+    </Page>
+    <Page Include="PropertiesPage.xaml">
+      <Filter>Pages</Filter>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Midl Include="MainWindow.idl" />
-    <Midl Include="Downloads.idl" />
     <Midl Include="DownloadsViewModel.idl" />
+    <Midl Include="Downloads.idl">
+      <Filter>Core\Model</Filter>
+    </Midl>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
@@ -20,18 +26,33 @@
     <ClCompile Include="DownloadFile.cpp" />
     <ClCompile Include="logging.cpp" />
     <ClCompile Include="DownloadsJson.cpp" />
-    <ClCompile Include="Downloads.cpp" />
     <ClCompile Include="DownloadsViewModel.cpp" />
-    <ClCompile Include="Utils.cpp" />
+    <ClCompile Include="Utils\Utils.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\BasicNotifications.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Downloads.cpp">
+      <Filter>Core\Model</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
     <ClInclude Include="DownloadFile.h" />
     <ClInclude Include="logging.h" />
     <ClInclude Include="DownloadsJson.h" />
-    <ClInclude Include="Downloads.h" />
     <ClInclude Include="DownloadsViewModel.h" />
-    <ClInclude Include="Utils.h" />
+    <ClInclude Include="Utils\Utils.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\BasicNotifications.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Downloads.h">
+      <Filter>Core\Model</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\Wide310x150Logo.scale-200.png">
@@ -192,6 +213,18 @@
     <Filter Include="Assets">
       <UniqueIdentifier>{bc19de07-2bd2-455f-84ba-65ff22fb51eb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{c50c3dc7-1898-42d7-93f3-aec71222db0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{8892c8cd-9498-4e5c-8202-07ca4c60857b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Model">
+      <UniqueIdentifier>{77726706-70bb-4454-ab59-9b9f6a0bcf8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pages">
+      <UniqueIdentifier>{a59d76b6-e5fe-457a-b8db-64531386f8f9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="readme.txt" />
@@ -207,5 +240,9 @@
   </ItemGroup>
   <ItemGroup>
     <Natvis Include="$(MSBuildThisFileDirectory)..\..\natvis\wil.natvis" />
+    <Natvis Include="$(MSBuildThisFileDirectory)..\..\natvis\wil.natstepfilter" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Torroid.rc" />
   </ItemGroup>
 </Project>

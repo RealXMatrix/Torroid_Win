@@ -7,7 +7,7 @@
 #include "DownloadFile.h"
 #include "logging.h"
 #include "DownloadsJson.h"
-#include "Utils.h"
+#include "Utils/Utils.h"
 #include "PropertiesPage.xaml.h"
 
 

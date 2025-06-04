@@ -2,7 +2,7 @@
 #include "DownloadFile.h"
 #include "DownloadsJson.h"
 #include "logging.h"
-#include "Utils.h"
+#include "Utils/Utils.h"
 
 #include <filesystem>
 
@@ -76,16 +76,15 @@ DownloadFile::DownloadFile() {
     {
         std::wstring folderPath = dFolder.Path().c_str();
         std::string downloadPath(folderPath.begin(), folderPath.end());
-        std::string directory = "dir";
         //Logging::Info("Download path : " + downloadPath);
-        std::pair<std::string, std::string> downloadOption(directory, downloadPath);
+        std::pair<std::string, std::string> downloadOption("dir", downloadPath);
         options.push_back(downloadOption);
     }
 }
 
 DownloadFile& DownloadFile::DownloadInstance() {
-    if (instance_ == nullptr) {
-        instance_ = new DownloadFile();
+    if (DownloadFile::instance_ == nullptr) {
+        DownloadFile::instance_ = new DownloadFile();
     }
     return *instance_;
 }

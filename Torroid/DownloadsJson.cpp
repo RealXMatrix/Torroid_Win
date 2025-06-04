@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "DownloadsJson.h"
 #include "logging.h"
-#include "Utils.h"
+#include "Utils/Utils.h"
 #include <fstream>
 #include <string>
 #include <regex>
@@ -39,7 +39,7 @@ DownloadsJson& DownloadsJson::jsonInstance() {
     return *jsonInstance_;
 }
 
-size_t DownloadsJson::size()
+size_t DownloadsJson::size() const
 {
     return vDownloadEntries.size(); // Get size of vector
 }

@@ -3,7 +3,7 @@
 #include "DownloadsViewModel.g.cpp"
 
 #include "DownloadFile.h"
-#include "Utils.h"
+#include "Utils/Utils.h"
 
 using namespace winrt;
 using namespace Windows::Foundation::Collections;

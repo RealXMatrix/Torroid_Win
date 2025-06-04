@@ -5,7 +5,7 @@
 #endif
 
 #include "DownloadsJson.h"
-#include "Utils.h"
+#include "Utils/Utils.h"
 
 using namespace winrt;
 using namespace Microsoft::UI::Xaml;
