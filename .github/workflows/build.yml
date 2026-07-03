@@ -11,7 +11,8 @@ jobs:
     - name: Checkout Code with Submodules
       uses: actions/checkout@v4
       with:
-        submodules: recursive
+        submodules: 'true'
+        fetch-depth: 0
 
     - name: Setup MSBuild (Visual Studio)
       uses: microsoft/setup-msbuild@v2
